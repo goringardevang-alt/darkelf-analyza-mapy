@@ -1,0 +1,12 @@
+{
+  "name": "darkelf-analyza-mapy",
+  "version": "0.1.0",
+  "description": "Znalosti a knihovna pro čtení a rozbor mapy hry darkelf.cz (podklad pro analyzující boty)",
+  "type": "module",
+  "main": "knihovna/index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test testy/"
+  },
+  "engines": { "node": ">=22.5" }
+}

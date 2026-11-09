@@ -1,0 +1,20 @@
+# Zkopíruj na wrangler.toml a doplň svoje hodnoty. wrangler.toml je v .gitignore.
+name = "analyza-mapy"
+main = "worker.js"
+compatibility_date = "2025-10-01"
+
+[triggers]
+crons = ["30 23 * * *"]   # UTC; 0:30 v zimě a 1:30 v létě českého času, po půlnočním přepočtu
+
+[[d1_databases]]
+binding = "DB"
+database_name = "analyza-mapy"
+database_id = "<id z: npx wrangler d1 create analyza-mapy>"
+
+[vars]
+LIGA = "2A"                       # liga, kterou sleduješ
+POHLED = "a:<id aliance>"         # čí pohled: a:<id_aliance> nebo h:<id_hrac>
+APP_ID = "<Application ID z Discord Developer Portalu>"
+PUBLIC_KEY = "<Public Key ze stejné stránky>"
+KANAL = "<ID kanálu, kam se posílá shrnutí>"
+# DISCORD_TOKEN NEPATŘÍ SEM: npx wrangler secret put DISCORD_TOKEN
